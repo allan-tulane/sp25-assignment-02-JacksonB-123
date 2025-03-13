@@ -1,6 +1,6 @@
 # CMPS 2200 Assignment 2
 
-**Name:**_________________________
+**Name:**____Jackson Burch_____________________
 
 In this assignment we'll work on applying the methods we've learned to analyze recurrences, and also see their behavior
 in practice. As with previous
@@ -15,9 +15,11 @@ and push to your github repository.
 Derive asymptotic upper bounds of work for each recurrence below.
 
 * $W(n)=2W(n/3)+1$
+.  My pdf file for some reason is saying it is unsupported, so I am emailing you pdf file.
+
+  I will put my answers on here but my work is on the pdf file for parts 1 and 2.
 .  
-.  
-. 
+. W(n)= O(5^log2 n)
 .  
 . 
 .  
@@ -26,7 +28,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 * $W(n)=5W(n/4)+n$
 .  
 .
-.  
+. W(n)= O(nlogn)
 . 
 .  
 . 
@@ -36,7 +38,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 
 * $W(n)=7W(n/7)+n$
 .  
-. 
+. W(n)= O(nlogn)
 .  
 .  
 . 
@@ -46,7 +48,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 * $W(n)=9W(n/3)+n^2$
 .  
 .
-. 
+. W(n)= O((n^2)logn)
 .  
 . 
 .  
@@ -56,7 +58,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 
 * $W(n)=8W(n/2)+n^3$
 .  
-.
+. W(n)= O((n^3)logn)
 .  
 .  
 .  
@@ -68,7 +70,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 
 * $W(n)=49W(n/25)+n^{3/2}\log n$
 .  
-.  
+.  W(n)= O((n^3/2)logn)
 . 
 .  
 . 
@@ -78,7 +80,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 
 * $W(n)=W(n-1)+2$
 .  
-.  
+.  W(n)= O(n)
 . 
 .  
 . 
@@ -88,7 +90,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 
 * $W(n)= W(n-1)+n^c$, with $c\geq 1$
 .  
-.  
+.  W(n)= O(n^c+1)
 .  
 .  
 .  
@@ -98,13 +100,17 @@ Derive asymptotic upper bounds of work for each recurrence below.
 
 * $W(n)=W(\sqrt{n})+1$
 .  
+.  W(n)= O(loglogn)
 .  
 .  
 .  
-.  
-. 
 . 
 
+my work for Part 1 and 2 is on a pdf called assgigment-02-Part1-2
+
+It won't let me upload the file directly because it says it is unsupported, but you can download the file. I will email you my work just incase.
+
+![assignment-02-Part1-2](assignment-02-Part1-2.pdf)
 
 ## Part 2. Algorithm Comparison
 
@@ -127,12 +133,15 @@ Suppose that for a given task you are choosing between the following three algor
     Which algorithm would you choose?
 
 
+.  I sent an email with my the pdf of my hand written work because the file was unsupported
 .  
-.  
-.  
-.  
-. 
-. 
+.  a. W(n)= O(5^log2 n)
+
+. b. W(n)= O(2^n)
+
+. c. W(n) = O((n^2)logn)
+
+. Option c is the best algorithm
 
 
 
@@ -162,8 +171,14 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **enter answer here**
 
-.  
-. 
+
+W(n)= W(n-1) +O(1)
+
+W(n) = O(n)
+
+S(n) = S(n-1) + O(1)
+
+S(n)= O(n)
 
 
 
@@ -178,8 +193,14 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **enter answer here**
 
-.  
-.  
+W(n)= 2w(n/2) +O(n)
+
+W(n) = O(n)
+
+S(n) = S(n/2)+ O(logn)
+
+S(n)= O(logn)
+
 
 
 
@@ -199,8 +220,13 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **enter answer here**
 
-.  
-. 
+. W(n)= 2W(n/2)+O(1)
+
+. W(n)= O(n)
+
+. S(n) = S(n/2) + O(1)
+
+. S(n) = O(log n)
 
 
  

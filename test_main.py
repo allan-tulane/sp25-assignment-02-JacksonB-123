@@ -1,4 +1,5 @@
-from main.py import *
+from main import *
+
 
 #### Iterative solution test
 def test_parens_match_iterative():

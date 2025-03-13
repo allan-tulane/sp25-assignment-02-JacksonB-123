@@ -23,6 +23,11 @@ def parens_match_iterative(mylist):
     False
     """
     ### TODO
+    def iterate(f, x, a):
+        result = x
+        for item in a:
+            result = f(result, item)
+        return result
     return iterate(parens_update, 0, mylist) == 0
     ###
 
@@ -77,9 +82,20 @@ def parens_match_scan(mylist):
     
     """
     ###TODO
+    def plus(x, y):
+        return x + y
+    
     history, last = scan(plus, 0, list(map(paren_map, mylist)))
     return last == 0 and reduce(min_f, 0, history) >= 0
     ###
+def reduce(f, id_, a): #Reduce funtion used from class slides
+    if len(a)==0:
+        return id_
+    elif len(a)==1:
+        return a[0]
+    else:
+        return f(reduce(f, id_, a[:len(a)//2]),
+             reduce(f, id_, a[len(a)//2:]))
 
 def scan(f, id_, a):
     """
@@ -149,9 +165,10 @@ def parens_match_dc_helper(mylist):
       parens_match_dc to return the final True or False value
     """
     ###TODO
+    
     # Base cases
     if len(mylist) == 0:
-        return [0,0]
+        return (0,0)
     elif len(mylist) == 1:
         if mylist[0] == '(':
             return (0, 1) # one unmatched (
@@ -159,15 +176,17 @@ def parens_match_dc_helper(mylist):
             return (1, 0) # one unmatched )    
         else:
             return (0, 0)
-    i,j = parens_match_dc_helper(mylist[:len(mylist)//2])
-    k,l = parens_match_dc_helper(mylist[len(mylist)//2:])
+    mid = len(mylist) // 2
+    #renamed the i,j,k,l variables to make it easier to read
+    left_r, left_l = parens_match_dc_helper(mylist[:mid])
+    right_r, right_l = parens_match_dc_helper(mylist[mid:])
     # Combination:
     # Return the tuple (R,L) using some combination of the values i,j,k,l defined above.
     # This should be done in constant time.
-    if j > k:
-        return (i, l + j - k)
-    else:
-        return (i + k - j, l)
+    matched = min(left_l,right_r)
+    new_L = left_l + right_l - matched
+    new_R = left_r + right_r - matched
+    return (new_R, new_L)
     ###
     
 
